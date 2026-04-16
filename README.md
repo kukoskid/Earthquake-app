@@ -88,6 +88,7 @@ npm start
 
 Frontend will be available at:
 http://localhost:5173
+
 The frontend communicates with:
 http://localhost:8080/api/earthquakes
 
@@ -110,13 +111,17 @@ Base URL:
 /api/earthquakes
 Fetch latest earthquakes and store
 POST /api/earthquakes/fetch
+
 Get all earthquakes
 GET /api/earthquakes
+
 Filter by magnitude
 GET /api/earthquakes/filter/magnitude?minMag=2.0
 Filter by time
+
 GET /api/earthquakes/filter/time?timestamp=1710000000000
 Delete earthquake
+
 DELETE /api/earthquakes/{id}
 
 ## Testing
