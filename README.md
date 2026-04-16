@@ -93,22 +93,34 @@ The frontend communicates with:
 http://localhost:8080/api/earthquakes
 
 ## Database Configuration
+
 The application uses PostgreSQL.
+
 Step 1: Create database
+
 CREATE DATABASE earthquakedb;
+
 Step 2: Configure connection
+
 Edit:
+
 src/main/resources/application.properties
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/earthquakedb
+
 spring.datasource.username=postgres
+
 spring.datasource.password=
+
 spring.jpa.hibernate.ddl-auto=update
+
 Update username/password if needed.
 
 ## API Endpoints
 
 Base URL:
 /api/earthquakes
+
 Fetch latest earthquakes and store
 POST /api/earthquakes/fetch
 
@@ -117,18 +129,21 @@ GET /api/earthquakes
 
 Filter by magnitude
 GET /api/earthquakes/filter/magnitude?minMag=2.0
+
 Filter by time
-
 GET /api/earthquakes/filter/time?timestamp=1710000000000
-Delete earthquake
 
+Delete earthquake
 DELETE /api/earthquakes/{id}
 
 ## Testing
 
 The application includes integration tests for the service layer.
+
 Uses H2 in-memory database
+
 Uses Spring profile: test
+
 External API calls are mocked for stability
 
 Run tests:
@@ -137,21 +152,34 @@ Run tests:
 ## Assumptions Made
 
 Time is handled as epoch milliseconds (as provided by USGS)
+
 Records missing critical fields (mag, time) are skipped
+
 Optional fields (place, title, magType) default to "Unknown" if missing
+
 Latitude and longitude may be null and are skipped in map rendering
+
 To avoid duplicates, the application:
+
 Deletes all existing records
+
 Inserts freshly fetched data
-Backend runs on port 8080, frontend on 3000
+
+Backend runs on port 8080, frontend on 5173
+
 CORS is enabled for local development
 
 
 ## Optional Improvements Implemented
 
 Delete endpoint for individual records
+
 Map visualization using Leaflet
+
 Improved UI styling and layout
+
 Formatted timestamps for better readability
+
 H2 database configuration for isolated testing
+
 Clean layered architecture (Controller → Service → Repository)
