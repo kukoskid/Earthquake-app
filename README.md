@@ -119,7 +119,7 @@ GET /api/earthquakes/filter/time?timestamp=1710000000000
 Delete earthquake
 DELETE /api/earthquakes/{id}
 
-##Testing
+## Testing
 
 The application includes integration tests for the service layer.
 Uses H2 in-memory database
