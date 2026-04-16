@@ -54,7 +54,7 @@ earthquakeapp/
 
 ---
 
-## ⚙️ Project Setup Instructions
+##  Project Setup Instructions
 
 ### Prerequisites
 
@@ -67,13 +67,13 @@ Make sure you have the following installed:
 
 ---
 
-## ▶️ How to Run the Application
+##  How to Run the Application
 
 1. Run Backend (Spring Boot)
 
 From the root directory:
 
-```bash
+
 ./mvnw spring-boot:run
 
 Backend will be available at:
